@@ -1,5 +1,6 @@
 package com.hexaware.cricket.entity;
 
+import jakarta.validation.constraints.Pattern;
 import jakarta.validation.constraints.Min;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotBlank;
@@ -12,9 +13,10 @@ public class PlayerDTO {
     @Min(value = 1, message = "Jersey number must be greater than 0")
     private Integer jerseyNumber;
 
-    @Enumerated(EnumType.STRING)
+    //@Enumerated(EnumType.STRING)
+    @Pattern(regexp = "Batsman|Bowler|Keeper|All Rounder", message = "Put one in the above")
     @NotBlank(message = "Role required")
-    private Role role;
+    private String role;
 
     @Min(value = 0, message = "0 or more")
     private Integer totalMatches;
