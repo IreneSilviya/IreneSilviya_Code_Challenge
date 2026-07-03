@@ -11,6 +11,7 @@ import com.hexaware.cricket.service.IPlayerService;
 
 import jakarta.validation.Valid;
 
+@CrossOrigin(origins = "http://localhost:5173")
 @RestController
 @RequestMapping("/api/players")
 @Validated
